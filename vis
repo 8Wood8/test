@@ -1,0 +1,46 @@
+import random
+import time
+
+
+def b_function():
+    reload=input('Анус ставишь?')
+    if reload == "да":
+        a_function()
+    else:
+        print ('Пока пидор')
+        time.sleep(5)
+        # sys.exit()
+        sys.exit()
+def a_function():
+    words_list = ['а', 'б', 'в', 'г']
+    secret_word=random.choice(words_list)
+# print(secret_word)
+    gamer_word=['*']*len(secret_word)
+    print("".join(gamer_word)) #преобразование сиска в строку
+#PEP-8 почитать что это такое
+
+    errors_counter = 0 #пишем это до цикла
+    while True:
+        letter=input('введи одну русскую букву:')
+  #print('вы ввели:', letter)
+        if len(letter) !=1: #если введена не одна буква, а несколько, то начать сначала
+            continue #начать заново с 14й строки (начнет заново)
+		
+        if letter in secret_word:
+            for b, symbol in enumerate(secret_word):
+      # print(idx, symbol)
+                if symbol==letter:
+                    gamer_word[b]=letter #земенит совпавшую букву
+            if "*" not in gamer_word:
+                print ('ты победил!', (secret_word))
+       # print ('было загадано слово:', secret_word.upper())
+                b_function()
+        else:
+            errors_counter +=1
+            print ('ошибок допущено', errors_counter)
+            if errors_counter==5:
+                print ("слишком много ошибок:", (errors_counter),', лох ебать:)')
+                time.sleep(5)
+                b_function()
+        print(''.join(gamer_word)) #выводим на экран то что получилось
+b_function() 
