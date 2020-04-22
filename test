@@ -1,0 +1,51 @@
+import time
+
+print('*ТеСт На ПиДоРа*')
+time.sleep(1)
+
+while True:
+        name=input('Введи имя: ')
+        if len(name) <4:
+        	continue
+        time.sleep(1)
+        age=input('Теперь возраст: ')
+        if age !=int and len(age)<2:
+        	continue
+        time.sleep(1)
+        print('Начинаю вычисления...')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('.')
+        anw=input('Дрочил сегодня? ')
+        if len(anw) <2:
+        	continue
+        if anw ==('да'):
+        	time.sleep(1)
+        	print ('Ты пидор:)')
+        	time.sleep(2)
+        	que=input('Попробуешь еще раз? ')
+        	if que == ('да'):
+        		continue
+        		que=input('Попробуешь еще раз? ')
+        	if que == ('нет'):
+        		time.sleep(1)
+        		print ('Пока пидор:(')
+        		time.sleep(5)
+        		break
+        if anw ==('нет'):
+        	time.sleep(1)
+        	print ('Ты все равно пидор:))')
+        	time.sleep(2)
+        	que=input('Попробуешь еще раз? ')
+        	if que == ('да'):
+        		time.sleep(1)
+        		continue
+        		que=input('Попробуешь еще раз? ')
+        	if que == ('нет'):
+        		time.sleep(1)
+        		print ('Пока пидор:(')
+        		time.sleep(5)
+        		break
